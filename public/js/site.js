@@ -1,0 +1,1 @@
+console.log('Yii3 project is running');

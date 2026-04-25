@@ -1,0 +1,28 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: yii3_app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html 
+    depends_on:
+      - db
+  db:
+    image: mysql:8.4
+    container_name: yii3_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: yii3app
+      MYSQL_USER: yii3user
+      MYSQL_PASSWORD: yii3pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql 
+      
+volumes:
+  mysql_data:
