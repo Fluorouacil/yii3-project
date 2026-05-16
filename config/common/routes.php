@@ -4,6 +4,8 @@ use App\Web\Api\EchoAction;
 use App\Web\Api\PingAction;
 use App\Web\HelloPage\Action as HelloPageAction;
 use App\Web\HomePage\Action as HomePageAction;
+use App\Web\Api\ModulesHandler;
+use App\Web\ProjectPage\ProjectPageHandler;
 use Yiisoft\Router\Route;
 return [
     Route::get('/')
@@ -18,4 +20,11 @@ return [
     Route::get('/api/echo')
         ->action(EchoAction::class)
         ->name('api/echo'),
+    Route::get('/project-page')
+        ->action(ProjectPageHandler::class)
+        ->name('project-page'),
+    Route::get('/api/modules')
+        ->action(ModulesHandler::class)
+        ->name('api/modules'),
+
 ];
