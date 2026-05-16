@@ -35,4 +35,10 @@ return [
             Reference::to(CsrfViewInjection::class),
         ],
     ],
+
+    'yiisoft/db-migration' => [
+        'newMigrationPath' => dirname(__DIR__, 2) . '/src/Migration',
+        'sourceNamespaces' => [],
+        'sourcePaths' => [dirname(__DIR__, 2) . '/src/Migration'],
+    ],
 ];
