@@ -3,16 +3,23 @@
 /** @var App\Domain\ProjectModule\ProjectModuleData $formData */
 /** @var array $errors */
 /** @var bool $isSuccess */
+/** @var bool|null $deleteSuccess */
+$deleteSuccess = $deleteSuccess ?? false;
 ?>
 <section class="module-page">
     <h2>Модули проекта</h2>
     <p>
-        На данной странице объединены два действия – вывод записей из таблицы
-        <code>project_module</code> и добавление новой записи через HTML-форму.
+        На данной странице объединены операции добавления, просмотра и удаления
+        записей таблицы <code>project_module</code>.
     </p>
     <?php if ($isSuccess): ?>
         <div class="alert alert-success">
             Запись успешно добавлена в базу данных.
+        </div>
+    <?php endif; ?>
+    <?php if ($deleteSuccess): ?>
+        <div class="alert alert-success">
+            Запись успешно удалена.
         </div>
     <?php endif; ?>
     <?php if ($errors !== []): ?>
@@ -71,6 +78,7 @@
                         <th>Статус</th>
                         <th>Порядок</th>
                         <th>Создано</th>
+                        <th>Действия</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -95,6 +103,17 @@
                             <td>
                                 <?= htmlspecialchars((string) $module['created_at'], ENT_QUOTES, 'UTF-8')
                                     ?>
+                            </td>
+                            <td class="actions-cell">
+                                <a class="edit-link" href="/project-modules/edit?id=<?=
+                                    urlencode((string) $module['id']) ?>">
+                                    Редактировать
+                                </a>
+                                <form action="/project-modules/delete" method="post" class="delete-form">
+                                    <input type="hidden" name="id" value="<?=
+                                        htmlspecialchars((string) $module['id'], ENT_QUOTES, 'UTF-8') ?>">
+                                    <button type="submit" class="delete-button">Удалить</button>
+                                </form>
                             </td>
                         </tr>
                     <?php endforeach; ?>

@@ -80,3 +80,46 @@
 .empty-state {
     color: #5f6c80;
 }
+
+.actions-cell {
+    min-width: 180px;
+}
+
+.edit-link {
+    display: inline-block;
+    margin-right: 10px;
+    color: #254fce;
+    text-decoration: none;
+}
+
+.edit-link:hover {
+    text-decoration: underline;
+}
+
+.delete-form {
+    display: inline;
+}
+
+.delete-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #b43838;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.actions-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.back-link {
+    color: #254fce;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

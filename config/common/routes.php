@@ -9,7 +9,10 @@ use App\Web\ProjectPage\ProjectPageHandler;
 use App\Web\Feedback\FeedbackPageHandler;
 use App\Web\Feedback\FeedbackSubmitHandler;
 use App\Web\ProjectModule\ProjectModuleCreateHandler;
+use App\Web\ProjectModule\ProjectModuleDeleteHandler;
+use App\Web\ProjectModule\ProjectModuleEditHandler;
 use App\Web\ProjectModule\ProjectModuleListHandler;
+use App\Web\ProjectModule\ProjectModuleUpdateHandler;
 use Yiisoft\Router\Route;
 return [
     Route::get('/')
@@ -42,4 +45,13 @@ return [
     Route::post('/project-modules')
         ->action(ProjectModuleCreateHandler::class)
         ->name('project-modules/create'),
+    Route::get('/project-modules/edit')
+        ->action(ProjectModuleEditHandler::class)
+        ->name('project-modules/edit'),
+    Route::post('/project-modules/update')
+        ->action(ProjectModuleUpdateHandler::class)
+        ->name('project-modules/update'),
+    Route::post('/project-modules/delete')
+        ->action(ProjectModuleDeleteHandler::class)
+        ->name('project-modules/delete'),
 ];
