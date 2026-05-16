@@ -1,0 +1,82 @@
+.module-page {
+    margin: 30px 0;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #d7dfec;
+    border-radius: 10px;
+}
+
+.module-form-section,
+.module-list-section {
+    margin-top: 30px;
+}
+
+.module-form .form-row {
+    margin-bottom: 18px;
+}
+
+.module-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.module-form input,
+.module-form textarea,
+.module-form select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #bcc8df;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.module-form button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #254fce;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.module-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+}
+
+.module-table th,
+.module-table td {
+    border: 1px solid #d7dfec;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.module-table thead {
+    background: #eef3fb;
+}
+
+.alert {
+    padding: 16px 18px;
+    border-radius: 8px;
+    margin: 18px 0;
+}
+
+.alert-success {
+    background: #e8f7ea;
+    border: 1px solid #b9dfbe;
+    color: #205b28;
+}
+
+.alert-error {
+    background: #fff1f1;
+    border: 1px solid #e0b8b8;
+    color: #7d2020;
+}
+
+.empty-state {
+    color: #5f6c80;
+}

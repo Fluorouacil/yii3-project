@@ -8,6 +8,8 @@ use App\Web\Api\ModulesHandler;
 use App\Web\ProjectPage\ProjectPageHandler;
 use App\Web\Feedback\FeedbackPageHandler;
 use App\Web\Feedback\FeedbackSubmitHandler;
+use App\Web\ProjectModule\ProjectModuleCreateHandler;
+use App\Web\ProjectModule\ProjectModuleListHandler;
 use Yiisoft\Router\Route;
 return [
     Route::get('/')
@@ -34,5 +36,10 @@ return [
     Route::post('/feedback')
         ->action(FeedbackSubmitHandler::class)
         ->name('feedback/submit'),
-
+    Route::get('/project-modules')
+        ->action(ProjectModuleListHandler::class)
+        ->name('project-modules'),
+    Route::post('/project-modules')
+        ->action(ProjectModuleCreateHandler::class)
+        ->name('project-modules/create'),
 ];
